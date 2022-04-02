@@ -26,26 +26,38 @@ resource "aws_security_group" "allow-ssh" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    from_port   = 8080
-    to_port     = 8080
+    from_port   = 8080  #Jenkins Port
+    to_port     = 8080  #Jenkins Port
     protocol    = "tcp"
     cidr_blocks = ["176.63.8.173/32"] # MyIP
   }
   ingress {
-    from_port   = 0
-    to_port     = 0
+    from_port   = 8080  #Jenkins Port
+    to_port     = 8080  #Jenkins Port
     protocol    = "tcp"
     cidr_blocks = ["131.228.2.0/27"]
   }
   ingress {
-    from_port   = 0
-    to_port     = 0
+    from_port   = 8080  #Jenkins Port
+    to_port     = 8080  #Jenkins Port
     protocol    = "tcp"
     cidr_blocks = ["131.228.32.160/27"]
   }
   ingress {
     from_port   = 5000  #Flask Application Port
-    to_port     = 5000
+    to_port     = 5000  #Flask Application Port
+    protocol    = "tcp"
+    cidr_blocks = ["131.228.2.0/27"]
+  }
+  ingress {
+    from_port   = 5000  #Flask Application Port
+    to_port     = 5000  #Flask Application Port
+    protocol    = "tcp"
+    cidr_blocks = ["131.228.32.160/27"]
+  }
+  ingress {
+    from_port   = 5000  #Flask Application Port
+    to_port     = 5000  #Flask Application Port
     protocol    = "tcp"
     cidr_blocks = ["176.63.8.173/32"] 
   }
