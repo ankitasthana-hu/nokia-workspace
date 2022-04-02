@@ -29,7 +29,7 @@ resource "aws_security_group" "allow-ssh" {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["176.63.8.173/32"]
+    cidr_blocks = ["176.63.8.173/32"] # MyIP
   }
   ingress {
     from_port   = 0
@@ -43,6 +43,13 @@ resource "aws_security_group" "allow-ssh" {
     protocol    = "tcp"
     cidr_blocks = ["131.228.32.160/27"]
   }
+  ingress {
+    from_port   = 5000  #Flask Application Port
+    to_port     = 5000
+    protocol    = "tcp"
+    cidr_blocks = ["176.63.8.173/32"] 
+  }
+
   tags = {
     Name = "common-security"
   }
