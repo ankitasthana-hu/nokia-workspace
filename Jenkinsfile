@@ -18,7 +18,7 @@
         stage('checkout') {
             steps {
                  script{
-                   dir("${WORKSPACE}")
+                   dir("terraform")
                         {
                             git branch: 'nokia-assignment',
                                 credentialsId: '12345-1234-4696-af25-123455',
