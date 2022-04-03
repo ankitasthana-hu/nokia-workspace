@@ -13,7 +13,7 @@ As per requirement, expose to required IP ranges.
 
 Under Deployment Server ( For Jenkins Installation ). Please refer jenkins.tf for terraform code and .rtf for terraform output log.
 
->>
+```
 >>-rwxrwxrwx 1 root     root       416 Apr  2 22:36 jenkinskey.pub
 >>-rwxrwxrwx 1 root     root      1679 Apr  2 22:36 jenkinskey
 >>-rw-rw-r-- 1 ec2-user ec2-user  2067 Apr  2 22:43 jenkins.tf
@@ -21,7 +21,7 @@ Under Deployment Server ( For Jenkins Installation ). Please refer jenkins.tf fo
 >>-rw-rw-r-- 1 ec2-user ec2-user 11001 Apr  2 22:46 terraform.tfstate
 >>drwx------ 5 ec2-user ec2-user   164 Apr  2 22:49 ..
 >>drwxrwxr-x 3 ec2-user ec2-user   107 Apr  2 22:49 .
->>
+```
 
 #### Note :
 ###### main.py is small sample flask python web application.
@@ -53,46 +53,7 @@ Flask python web application is accessible as below
 Terraform INIT , PLAN AND APPLY LOG
 =======================================
 ```
-[ec2-user@ip-172-31-24-47 nokia-workspace]$ terraform init
-Initializing modules...
-- module.web-sg
-
-Initializing provider plugins...
-- Checking for available provider plugins on https://releases.hashicorp.com...
-- Downloading plugin for provider "aws" (2.70.0)...
-- Downloading plugin for provider "template" (2.2.0)...
-
-The following providers do not have any version constraints in configuration,
-so the latest version was installed.
-
-To prevent automatic upgrades to new major versions that may contain breaking
-changes, it is recommended to add version = "..." constraints to the
-corresponding provider blocks in configuration, with the constraint strings
-suggested below.
-
-* provider.template: version = "~> 2.2"
-
-Terraform has been successfully initialized!
-
-You may now begin working with Terraform. Try running "terraform plan" to see
-any changes that are required for your infrastructure. All Terraform commands
-should now work.
-
-If you ever set or change modules or backend configuration for Terraform,
-rerun this command to reinitialize your working directory. If you forget, other
-commands will detect it and remind you to do so if necessary.
 [ec2-user@ip-172-31-24-47 nokia-workspace]$ terraform apply -auto-approve
-
-Warning: template_file.user_data: using template_file as a resource is deprecated; consider using the data source instead
-
-
-
-template_file.user_data: Creating...
-  rendered:     "" => "<computed>"
-  template:     "" => "app_install.tpl"
-  vars.%:       "" => "1"
-  vars.cluster: "" => "flask"
-template_file.user_data: Creation complete after 0s (ID: 6b02e5327274de806c203cd4531128783fb195938f792b29a9003a1f548a68d7)
 aws_key_pair.mykeypair: Creating...
   arn:         "" => "<computed>"
   fingerprint: "" => "<computed>"
@@ -160,8 +121,8 @@ module.web-sg.aws_security_group.allow-ssh: Creating...
   tags.%:                                "" => "1"
   tags.Name:                             "" => "web_sg"
   vpc_id:                                "" => "vpc-03236815ac57df9f7"
-aws_key_pair.mykeypair: Creation complete after 1s (ID: nokiakey)
-module.web-sg.aws_security_group.allow-ssh: Creation complete after 3s (ID: sg-05c83131972e0116e)
+aws_key_pair.mykeypair: Creation complete after 0s (ID: nokiakey)
+module.web-sg.aws_security_group.allow-ssh: Creation complete after 3s (ID: sg-0a31732d4abbf5147)
 aws_launch_configuration.nokia-launchconfig: Creating...
   arn:                         "" => "<computed>"
   associate_public_ip_address: "" => "true"
@@ -175,9 +136,9 @@ aws_launch_configuration.nokia-launchconfig: Creating...
   name_prefix:                 "" => "nokia-launchconfig1"
   root_block_device.#:         "" => "<computed>"
   security_groups.#:           "" => "1"
-  security_groups.2291939344:  "" => "sg-05c83131972e0116e"
-  user_data:                   "" => "707ee9337a6343c12d00352e8a28a0857c2164ca"
-aws_launch_configuration.nokia-launchconfig: Creation complete after 0s (ID: nokia-launchconfig120220403101811848500000001)
+  security_groups.3586062907:  "" => "sg-0a31732d4abbf5147"
+  user_data:                   "" => "7f44d492672230b53bc4995a8cf394721dcc7229"
+aws_launch_configuration.nokia-launchconfig: Creation complete after 1s (ID: nokia-launchconfig120220403104505536900000001)
 aws_autoscaling_group.nokia-autoscaling: Creating...
   arn:                               "" => "<computed>"
   default_cooldown:                  "" => "<computed>"
@@ -185,7 +146,7 @@ aws_autoscaling_group.nokia-autoscaling: Creating...
   force_delete:                      "" => "true"
   health_check_grace_period:         "" => "300"
   health_check_type:                 "" => "EC2"
-  launch_configuration:              "" => "nokia-launchconfig120220403101811848500000001"
+  launch_configuration:              "" => "nokia-launchconfig120220403104505536900000001"
   load_balancers.#:                  "" => "<computed>"
   max_size:                          "" => "4"
   metrics_granularity:               "" => "1Minute"
@@ -210,9 +171,10 @@ aws_autoscaling_group.nokia-autoscaling: Still creating... (40s elapsed)
 aws_autoscaling_group.nokia-autoscaling: Still creating... (50s elapsed)
 aws_autoscaling_group.nokia-autoscaling: Still creating... (1m0s elapsed)
 aws_autoscaling_group.nokia-autoscaling: Still creating... (1m10s elapsed)
-aws_autoscaling_group.nokia-autoscaling: Creation complete after 1m18s (ID: nokia-autoscaling)
+aws_autoscaling_group.nokia-autoscaling: Creation complete after 1m17s (ID: nokia-autoscaling)
 
-Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
 ```
+<img width="1186" alt="Screenshot 2022-04-03 at 12 48 12" src="https://user-images.githubusercontent.com/59736927/161424029-45d4a8c1-fa8d-4cbc-8d7f-29d541701b38.png">
 
 
