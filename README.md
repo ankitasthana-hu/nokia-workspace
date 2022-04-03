@@ -21,6 +21,8 @@ Under Deployment Server ( For Jenkins Installation ). Please refer jenkins.tf fo
 >>drwxrwxr-x 3 ec2-user ec2-user   107 Apr  2 22:49 .
 >>
 
+#### Note :
+###### main.py is small sample flask python web application.
 
 After Jenkins Installation, couple of plugins installed like 
 1. terraform, git etc.
