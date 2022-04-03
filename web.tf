@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 module "web-sg" {
-  source         = "../modules"
+  source         = "/modules"
   sg_name        = "web_sg"
   customport     = "5000"
 }
