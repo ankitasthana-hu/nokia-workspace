@@ -11,15 +11,15 @@ As per requirement, expose to required IP ranges.
 
 Under Deployment Server ( For Jenkins Installation ). Please refer jenkins.tf for terraform code and .rtf for terraform output log.
 
-{code}
--rwxrwxrwx 1 root     root       416 Apr  2 22:36 jenkinskey.pub
--rwxrwxrwx 1 root     root      1679 Apr  2 22:36 jenkinskey
--rw-rw-r-- 1 ec2-user ec2-user  2067 Apr  2 22:43 jenkins.tf
-drwxrwxr-x 3 ec2-user ec2-user    21 Apr  2 22:43 .terraform
--rw-rw-r-- 1 ec2-user ec2-user 11001 Apr  2 22:46 terraform.tfstate
-drwx------ 5 ec2-user ec2-user   164 Apr  2 22:49 ..
-drwxrwxr-x 3 ec2-user ec2-user   107 Apr  2 22:49 .
-{code}
+>>
+>>-rwxrwxrwx 1 root     root       416 Apr  2 22:36 jenkinskey.pub
+>>-rwxrwxrwx 1 root     root      1679 Apr  2 22:36 jenkinskey
+>>-rw-rw-r-- 1 ec2-user ec2-user  2067 Apr  2 22:43 jenkins.tf
+>>drwxrwxr-x 3 ec2-user ec2-user    21 Apr  2 22:43 .terraform
+>>-rw-rw-r-- 1 ec2-user ec2-user 11001 Apr  2 22:46 terraform.tfstate
+>>drwx------ 5 ec2-user ec2-user   164 Apr  2 22:49 ..
+>>drwxrwxr-x 3 ec2-user ec2-user   107 Apr  2 22:49 .
+>>
 
 
 After Jenkins Installation, couple of plugins installed like 
