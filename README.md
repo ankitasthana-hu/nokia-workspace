@@ -27,11 +27,23 @@ After Jenkins Installation, couple of plugins installed like
 2. Created GIThub token in secret text etc.
 3. AWS secret key and access key stored as credential
 
+Setup Flow
+=============
+>> Spin up deployment server to execute Jenkins infra terraform ( jenkins-terraform/). Preparation will be install terraform and configure aws.
+>> remote-exec output will give you admin password for Jenkins so that you can login
+>> Store AWS access & secret key in Jenkins Credential and install terraform plugin
+>> Use attached Jenkinsfile and execute web instance in HA mode ( autoscaling is set ).
+>> Jenkinsfile has operation to execute plan, apply and destroy.
+
 Flask python web application is accessible as below 
 =================
 
 <img width="521" alt="Screenshot 2022-04-02 at 23 12 40" src="https://user-images.githubusercontent.com/59736927/161406706-f1874131-58b7-46fe-b605-d2aa8d4f8914.png">
 
 <img width="528" alt="Screenshot 2022-04-02 at 23 11 55" src="https://user-images.githubusercontent.com/59736927/161406713-11db19b4-41fc-4361-af95-771712cff78c.png">
+
+<img width="544" alt="Screenshot 2022-04-03 at 6 58 36" src="https://user-images.githubusercontent.com/59736927/161412296-e0a065fd-c56f-41e3-9c12-5d7f3f642c39.png">
+
+
 
 
