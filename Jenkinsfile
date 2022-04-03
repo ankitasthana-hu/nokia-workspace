@@ -23,7 +23,7 @@
                             git branch: 'nokia-assignment',
                                 credentialsId: '12345-1234-4696-af25-123455',
                                 url: 'https://github.com/ankitasthana-hu/nokia-workspace.git'
-                            sh "rm -rf jenkins.tf"
+                            sh "rm -rf jenkins-terraform"
                             sh "ls -lrta"
                         }
                     }
