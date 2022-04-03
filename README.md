@@ -1,9 +1,10 @@
 # nokia-workspace
 
 
-Jenkins URL:
+Website endpoints ( expose to required ip ranges )
 =================
-http://44.203.91.63:8080/
+http://34.201.250.10:5000/
+http://34.201.250.10:5000/nokia
 
 As per requirement, expose to required IP ranges.
 
