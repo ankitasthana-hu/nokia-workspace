@@ -1,0 +1,958 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red74\green0\blue255;\red47\green180\blue29;
+}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c36732\c20485\c100000;\cssrgb\c20238\c73898\c14947;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 [ec2-user@ip-172-31-91-225 jenkins]$ terraform apply -auto-approve\
+
+\f1\b aws_key_pair.mykey: Creating...
+\f0\b0 \
+  arn:         "" => "<computed>"\
+  fingerprint: "" => "<computed>"\
+  key_name:    "" => "mykey"\
+  key_pair_id: "" => "<computed>"\
+  public_key:  "" => "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWfmVF/vUhiesATFChHybyH0TBhRV1RDicoewoDohCPIpuO0egGSWTeBRf2b4Zxb2quJTcS5GruYfyHCnDJ64Kca6JvTxNdaImJZCKbPubQwlxqWAWJprb43nDBdJkoiNrSKhGcsa8apCDGTynC4pTu0CCL2sJxpqCrFybECKlKLfNghMBWkYwWBbmciSrtND242GAZufVVtMfARXwJfuccLr/9fNt8q1uL4EhZOevIR22fPY9//ZCyPewjspU1pMN+4bGpHqbMY6kIQQwPyGfNsjezIGT4SoKoQy4vdKW2/HWt7MFO/7/8RwpsruQPlG4V4uoZwt49JCgdlZ0hEKt root@ip-172-31-91-225.ec2.internal"\
+
+\f1\b aws_security_group.allow-ssh: Creating...
+\f0\b0 \
+  arn:                                   "" => "<computed>"\
+  description:                           "" => "security group that allows ssh and all egress traffic"\
+  egress.#:                              "" => "1"\
+  egress.482069346.cidr_blocks.#:        "" => "1"\
+  egress.482069346.cidr_blocks.0:        "" => "0.0.0.0/0"\
+  egress.482069346.description:          "" => ""\
+  egress.482069346.from_port:            "" => "0"\
+  egress.482069346.ipv6_cidr_blocks.#:   "" => "0"\
+  egress.482069346.prefix_list_ids.#:    "" => "0"\
+  egress.482069346.protocol:             "" => "-1"\
+  egress.482069346.security_groups.#:    "" => "0"\
+  egress.482069346.self:                 "" => "false"\
+  egress.482069346.to_port:              "" => "0"\
+  ingress.#:                             "" => "4"\
+  ingress.1157469533.cidr_blocks.#:      "" => "1"\
+  ingress.1157469533.cidr_blocks.0:      "" => "131.228.32.160/27"\
+  ingress.1157469533.description:        "" => ""\
+  ingress.1157469533.from_port:          "" => "0"\
+  ingress.1157469533.ipv6_cidr_blocks.#: "" => "0"\
+  ingress.1157469533.prefix_list_ids.#:  "" => "0"\
+  ingress.1157469533.protocol:           "" => "tcp"\
+  ingress.1157469533.security_groups.#:  "" => "0"\
+  ingress.1157469533.self:               "" => "false"\
+  ingress.1157469533.to_port:            "" => "0"\
+  ingress.1841163041.cidr_blocks.#:      "" => "1"\
+  ingress.1841163041.cidr_blocks.0:      "" => "131.228.2.0/27"\
+  ingress.1841163041.description:        "" => ""\
+  ingress.1841163041.from_port:          "" => "0"\
+  ingress.1841163041.ipv6_cidr_blocks.#: "" => "0"\
+  ingress.1841163041.prefix_list_ids.#:  "" => "0"\
+  ingress.1841163041.protocol:           "" => "tcp"\
+  ingress.1841163041.security_groups.#:  "" => "0"\
+  ingress.1841163041.self:               "" => "false"\
+  ingress.1841163041.to_port:            "" => "0"\
+  ingress.245151175.cidr_blocks.#:       "" => "1"\
+  ingress.245151175.cidr_blocks.0:       "" => "176.63.8.173/32"\
+  ingress.245151175.description:         "" => ""\
+  ingress.245151175.from_port:           "" => "8080"\
+  ingress.245151175.ipv6_cidr_blocks.#:  "" => "0"\
+  ingress.245151175.prefix_list_ids.#:   "" => "0"\
+  ingress.245151175.protocol:            "" => "tcp"\
+  ingress.245151175.security_groups.#:   "" => "0"\
+  ingress.245151175.self:                "" => "false"\
+  ingress.245151175.to_port:             "" => "8080"\
+  ingress.2541437006.cidr_blocks.#:      "" => "1"\
+  ingress.2541437006.cidr_blocks.0:      "" => "0.0.0.0/0"\
+  ingress.2541437006.description:        "" => ""\
+  ingress.2541437006.from_port:          "" => "22"\
+  ingress.2541437006.ipv6_cidr_blocks.#: "" => "0"\
+  ingress.2541437006.prefix_list_ids.#:  "" => "0"\
+  ingress.2541437006.protocol:           "" => "tcp"\
+  ingress.2541437006.security_groups.#:  "" => "0"\
+  ingress.2541437006.self:               "" => "false"\
+  ingress.2541437006.to_port:            "" => "22"\
+  name:                                  "" => "common-security"\
+  owner_id:                              "" => "<computed>"\
+  revoke_rules_on_delete:                "" => "false"\
+  tags.%:                                "" => "1"\
+  tags.Name:                             "" => "common-security"\
+  vpc_id:                                "" => "vpc-03c58ec4d1806289c"\
+
+\f1\b aws_key_pair.mykey: Creation complete after 1s (ID: mykey)
+\f0\b0 \
+
+\f1\b aws_security_group.allow-ssh: Creation complete after 3s (ID: sg-0356c82259ff83663)
+\f0\b0 \
+
+\f1\b aws_instance.jenkins: Creating...
+\f0\b0 \
+  ami:                          "" => "ami-0c02fb55956c7d316"\
+  arn:                          "" => "<computed>"\
+  associate_public_ip_address:  "" => "<computed>"\
+  availability_zone:            "" => "<computed>"\
+  cpu_core_count:               "" => "<computed>"\
+  cpu_threads_per_core:         "" => "<computed>"\
+  ebs_block_device.#:           "" => "<computed>"\
+  ephemeral_block_device.#:     "" => "<computed>"\
+  get_password_data:            "" => "false"\
+  host_id:                      "" => "<computed>"\
+  instance_state:               "" => "<computed>"\
+  instance_type:                "" => "t2.medium"\
+  ipv6_address_count:           "" => "<computed>"\
+  ipv6_addresses.#:             "" => "<computed>"\
+  key_name:                     "" => "mykey"\
+  metadata_options.#:           "" => "<computed>"\
+  network_interface.#:          "" => "<computed>"\
+  network_interface_id:         "" => "<computed>"\
+  outpost_arn:                  "" => "<computed>"\
+  password_data:                "" => "<computed>"\
+  placement_group:              "" => "<computed>"\
+  primary_network_interface_id: "" => "<computed>"\
+  private_dns:                  "" => "<computed>"\
+  private_ip:                   "" => "<computed>"\
+  public_dns:                   "" => "<computed>"\
+  public_ip:                    "" => "<computed>"\
+  root_block_device.#:          "" => "<computed>"\
+  security_groups.#:            "" => "1"\
+  security_groups.2130639109:   "" => "common-security"\
+  source_dest_check:            "" => "true"\
+  subnet_id:                    "" => "<computed>"\
+  tags.%:                       "" => "1"\
+  tags.Name:                    "" => "Jenkins-Server-Terraform"\
+  tenancy:                      "" => "<computed>"\
+  volume_tags.%:                "" => "<computed>"\
+  vpc_security_group_ids.#:     "" => "<computed>"\
+
+\f1\b aws_instance.jenkins: Still creating... (10s elapsed)
+\f0\b0 \
+
+\f1\b aws_instance.jenkins: Still creating... (20s elapsed)
+\f0\b0 \
+
+\f1\b aws_instance.jenkins: Still creating... (30s elapsed)
+\f0\b0 \
+
+\f1\b aws_instance.jenkins: Still creating... (40s elapsed)
+\f0\b0 \
+
+\f1\b aws_instance.jenkins: Provisioning with 'remote-exec'...
+\f0\b0 \
+aws_instance.jenkins (remote-exec): Connecting to remote host via SSH...\
+aws_instance.jenkins (remote-exec):   Host: 44.203.91.63\
+aws_instance.jenkins (remote-exec):   User: ec2-user\
+aws_instance.jenkins (remote-exec):   Password: false\
+aws_instance.jenkins (remote-exec):   Private key: true\
+aws_instance.jenkins (remote-exec):   SSH Agent: false\
+aws_instance.jenkins (remote-exec):   Checking Host Key: false\
+aws_instance.jenkins (remote-exec): Connected!\
+aws_instance.jenkins (remote-exec): Installing java-11-openjdk\
+aws_instance.jenkins (remote-exec): Loaded plugins: extras_suggestions,\
+aws_instance.jenkins (remote-exec):               : langpacks, priorities,\
+aws_instance.jenkins (remote-exec):               : update-motd\
+aws_instance.jenkins (remote-exec): Existing lock /var/run/yum.pid: another copy is running as pid 3332.\
+aws_instance.jenkins (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...\
+aws_instance.jenkins (remote-exec):   The other application is: yum\
+aws_instance.jenkins (remote-exec):     Memory :  84 M RSS (376 MB VSZ)\
+aws_instance.jenkins (remote-exec):     Started: Sat Apr  2 22:45:26 2022 - 00:04 ago\
+aws_instance.jenkins (remote-exec):     State  : Running, pid: 3332\
+aws_instance.jenkins (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...\
+aws_instance.jenkins (remote-exec):   The other application is: yum\
+aws_instance.jenkins (remote-exec):     Memory : 118 M RSS (410 MB VSZ)\
+aws_instance.jenkins (remote-exec):     Started: Sat Apr  2 22:45:26 2022 - 00:06 ago\
+aws_instance.jenkins (remote-exec):     State  : Running, pid: 3332\
+aws_instance.jenkins (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...\
+aws_instance.jenkins (remote-exec):   The other application is: yum\
+aws_instance.jenkins (remote-exec):     Memory : 161 M RSS (454 MB VSZ)\
+aws_instance.jenkins (remote-exec):     Started: Sat Apr  2 22:45:26 2022 - 00:08 ago\
+aws_instance.jenkins (remote-exec):     State  : Running, pid: 3332\
+
+\f1\b aws_instance.jenkins: Still creating... (50s elapsed)
+\f0\b0 \
+aws_instance.jenkins (remote-exec): Existing lock /var/run/yum.pid: another copy is running as pid 3333.\
+aws_instance.jenkins (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...\
+aws_instance.jenkins (remote-exec):   The other application is: yum\
+aws_instance.jenkins (remote-exec):     Memory :  63 M RSS (282 MB VSZ)\
+aws_instance.jenkins (remote-exec):     Started: Sat Apr  2 22:45:26 2022 - 00:10 ago\
+aws_instance.jenkins (remote-exec):     State  : Running, pid: 3333\
+aws_instance.jenkins (remote-exec): Cleaning repos: amzn2-core\
+aws_instance.jenkins (remote-exec):      ...: amzn2extra-docker\
+aws_instance.jenkins (remote-exec):      ...: amzn2extra-java-openjdk11\
+aws_instance.jenkins (remote-exec):      ...: amzn2extra-kernel-5.10\
+aws_instance.jenkins (remote-exec): 17 metadata files removed\
+aws_instance.jenkins (remote-exec): 6 sqlite files removed\
+aws_instance.jenkins (remote-exec): 0 metadata files removed\
+aws_instance.jenkins (remote-exec): Loaded plugins: extras_suggestions,\
+aws_instance.jenkins (remote-exec):               : langpacks, priorities,\
+aws_instance.jenkins (remote-exec):               : update-motd\
+aws_instance.jenkins (remote-exec): amzn2-core       | 3.7 kB     00:00\
+aws_instance.jenkins (remote-exec): amzn2extra-docke | 3.0 kB     00:00\
+aws_instance.jenkins (remote-exec): amzn2extra-java- | 3.0 kB     00:00\
+aws_instance.jenkins (remote-exec): amzn2extra-kerne | 3.0 kB     00:00\
+aws_instance.jenkins (remote-exec): (1/9): amzn2-core/ | 2.5 kB   00:00\
+aws_instance.jenkins (remote-exec): (2/9): amzn2-core/ | 452 kB   00:00\
+aws_instance.jenkins (remote-exec): (3/9): amzn2extra- | 126 kB   00:00\
+aws_instance.jenkins (remote-exec): (4/9): amzn2extra- |  12 kB   00:00\
+aws_instance.jenkins (remote-exec): (5/9): amzn2extra- | 7.4 MB   00:00\
+aws_instance.jenkins (remote-exec): (6/9): amzn2extra- | 1.3 kB   00:00\
+aws_instance.jenkins (remote-exec): (7/9): amzn2extra- |  86 kB   00:00\
+aws_instance.jenkins (remote-exec): (8/9): amzn2extra- | 5.9 kB   00:00\
+aws_instance.jenkins (remote-exec): (9/9): amzn2-c 55% |  38 MB   --:-- ETA\
+aws_instance.jenkins (remote-exec): (9/9): amzn2-c 99% |  68 MB   00:00 ETA\
+aws_instance.jenkins (remote-exec): (9/9): amzn2-core/ |  60 MB   00:00\
+aws_instance.jenkins (remote-exec): Resolving Dependencies\
+aws_instance.jenkins (remote-exec): --> Running transaction check\
+aws_instance.jenkins (remote-exec): ---> Package java-11-openjdk.x86_64 1:11.0.13.0.8-1.amzn2.0.3 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: java-11-openjdk-headless(x86-64) = 1:11.0.13.0.8-1.amzn2.0.3 for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: xorg-x11-fonts-Type1 for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: fontconfig(x86-64) for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libjvm.so()(64bit) for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libjava.so()(64bit) for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libgif.so.4()(64bit) for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libXtst.so.6()(64bit) for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libXrender.so.1()(64bit) for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libXi.so.6()(64bit) for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libXext.so.6()(64bit) for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libX11.so.6()(64bit) for package: 1:java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Running transaction check\
+aws_instance.jenkins (remote-exec): ---> Package fontconfig.x86_64 0:2.13.0-4.3.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: fontpackages-filesystem for package: fontconfig-2.13.0-4.3.amzn2.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: dejavu-sans-fonts for package: fontconfig-2.13.0-4.3.amzn2.x86_64\
+aws_instance.jenkins (remote-exec): ---> Package giflib.x86_64 0:4.1.6-9.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libSM.so.6()(64bit) for package: giflib-4.1.6-9.amzn2.0.2.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libICE.so.6()(64bit) for package: giflib-4.1.6-9.amzn2.0.2.x86_64\
+aws_instance.jenkins (remote-exec): ---> Package java-11-openjdk-headless.x86_64 1:11.0.13.0.8-1.amzn2.0.3 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: tzdata-java >= 2020f for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: copy-jdk-configs >= 3.3 for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: pcsc-lite-libs(x86-64) for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: log4j-cve-2021-44228-cve-mitigations for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: lksctp-tools(x86-64) for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libasound.so.2(ALSA_0.9.0rc4)(64bit) for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libasound.so.2(ALSA_0.9)(64bit) for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: javapackages-tools for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: cups-libs(x86-64) for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libasound.so.2()(64bit) for package: 1:java-11-openjdk-headless-11.0.13.0.8-1.amzn2.0.3.x86_64\
+aws_instance.jenkins (remote-exec): ---> Package libX11.x86_64 0:1.6.7-3.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libX11-common >= 1.6.7-3.amzn2.0.2 for package: libX11-1.6.7-3.amzn2.0.2.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libxcb.so.1()(64bit) for package: libX11-1.6.7-3.amzn2.0.2.x86_64\
+aws_instance.jenkins (remote-exec): ---> Package libXext.x86_64 0:1.3.3-3.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package libXi.x86_64 0:1.7.9-1.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package libXrender.x86_64 0:0.9.10-1.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package libXtst.x86_64 0:1.2.3-1.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package xorg-x11-fonts-Type1.noarch 0:7.5-9.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.5-9.amzn2.noarch\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.5-9.amzn2.noarch\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.5-9.amzn2.noarch\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.5-9.amzn2.noarch\
+aws_instance.jenkins (remote-exec): --> Running transaction check\
+aws_instance.jenkins (remote-exec): ---> Package alsa-lib.x86_64 0:1.1.4.1-2.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package copy-jdk-configs.noarch 0:3.3-10.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package cups-libs.x86_64 1:1.6.3-51.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libavahi-common.so.3()(64bit) for package: 1:cups-libs-1.6.3-51.amzn2.x86_64\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libavahi-client.so.3()(64bit) for package: 1:cups-libs-1.6.3-51.amzn2.x86_64\
+aws_instance.jenkins (remote-exec): ---> Package dejavu-sans-fonts.noarch 0:2.33-6.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: dejavu-fonts-common = 2.33-6.amzn2 for package: dejavu-sans-fonts-2.33-6.amzn2.noarch\
+aws_instance.jenkins (remote-exec): ---> Package fontpackages-filesystem.noarch 0:1.44-8.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package javapackages-tools.noarch 0:3.4.1-11.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: python-javapackages = 3.4.1-11.amzn2 for package: javapackages-tools-3.4.1-11.amzn2.noarch\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libxslt for package: javapackages-tools-3.4.1-11.amzn2.noarch\
+aws_instance.jenkins (remote-exec): ---> Package libICE.x86_64 0:1.0.9-9.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package libSM.x86_64 0:1.2.2-2.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package libX11-common.noarch 0:1.6.7-3.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package libxcb.x86_64 0:1.12-1.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libXau.so.6()(64bit) for package: libxcb-1.12-1.amzn2.0.2.x86_64\
+aws_instance.jenkins (remote-exec): ---> Package lksctp-tools.x86_64 0:1.0.17-2.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package log4j-cve-2021-44228-hotpatch.noarch 0:1.1-13.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package pcsc-lite-libs.x86_64 0:1.8.8-7.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package ttmkfdir.x86_64 0:3.0.9-42.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package tzdata-java.noarch 0:2021e-1.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package xorg-x11-font-utils.x86_64 1:7.5-21.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: libfontenc.so.1()(64bit) for package: 1:xorg-x11-font-utils-7.5-21.amzn2.x86_64\
+aws_instance.jenkins (remote-exec): --> Running transaction check\
+aws_instance.jenkins (remote-exec): ---> Package avahi-libs.x86_64 0:0.6.31-20.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package dejavu-fonts-common.noarch 0:2.33-6.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package libXau.x86_64 0:1.0.8-2.1.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package libfontenc.x86_64 0:1.1.3-3.amzn2.0.2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package libxslt.x86_64 0:1.1.28-6.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): ---> Package python-javapackages.noarch 0:3.4.1-11.amzn2 will be installed\
+aws_instance.jenkins (remote-exec): --> Processing Dependency: python-lxml for package: python-javapackages-3.4.1-11.amzn2.noarch\
+aws_instance.jenkins (remote-exec): --> Running transaction check\
+aws_instance.jenkins (remote-exec): ---> Package python-lxml.x86_64 0:3.2.1-4.amzn2.0.3 will be installed\
+aws_instance.jenkins (remote-exec): --> Finished Dependency Resolution\
+\
+aws_instance.jenkins (remote-exec): Dependencies Resolved\
+\
+aws_instance.jenkins (remote-exec): ========================================\
+aws_instance.jenkins (remote-exec):  Package      Arch   Version\
+aws_instance.jenkins (remote-exec):                        Repository  Size\
+aws_instance.jenkins (remote-exec): ========================================\
+aws_instance.jenkins (remote-exec): Installing:\
+aws_instance.jenkins (remote-exec):  java-11-openjdk\
+aws_instance.jenkins (remote-exec):               x86_64 1:11.0.13.0.8-1.amzn2.0.3\
+aws_instance.jenkins (remote-exec):                        amzn2extra-java-openjdk11\
+aws_instance.jenkins (remote-exec):                                   232 k\
+aws_instance.jenkins (remote-exec): Installing for dependencies:\
+aws_instance.jenkins (remote-exec):  alsa-lib     x86_64 1.1.4.1-2.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 425 k\
+aws_instance.jenkins (remote-exec):  avahi-libs   x86_64 0.6.31-20.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  61 k\
+aws_instance.jenkins (remote-exec):  copy-jdk-configs\
+aws_instance.jenkins (remote-exec):               noarch 3.3-10.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  21 k\
+aws_instance.jenkins (remote-exec):  cups-libs    x86_64 1:1.6.3-51.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 356 k\
+aws_instance.jenkins (remote-exec):  dejavu-fonts-common\
+aws_instance.jenkins (remote-exec):               noarch 2.33-6.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  64 k\
+aws_instance.jenkins (remote-exec):  dejavu-sans-fonts\
+aws_instance.jenkins (remote-exec):               noarch 2.33-6.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 1.4 M\
+aws_instance.jenkins (remote-exec):  fontconfig   x86_64 2.13.0-4.3.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 253 k\
+aws_instance.jenkins (remote-exec):  fontpackages-filesystem\
+aws_instance.jenkins (remote-exec):               noarch 1.44-8.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  10 k\
+aws_instance.jenkins (remote-exec):  giflib       x86_64 4.1.6-9.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  40 k\
+aws_instance.jenkins (remote-exec):  java-11-openjdk-headless\
+aws_instance.jenkins (remote-exec):               x86_64 1:11.0.13.0.8-1.amzn2.0.3\
+aws_instance.jenkins (remote-exec):                        amzn2extra-java-openjdk11\
+aws_instance.jenkins (remote-exec):                                    39 M\
+aws_instance.jenkins (remote-exec):  javapackages-tools\
+aws_instance.jenkins (remote-exec):               noarch 3.4.1-11.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  73 k\
+aws_instance.jenkins (remote-exec):  libICE       x86_64 1.0.9-9.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  67 k\
+aws_instance.jenkins (remote-exec):  libSM        x86_64 1.2.2-2.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  39 k\
+aws_instance.jenkins (remote-exec):  libX11       x86_64 1.6.7-3.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 606 k\
+aws_instance.jenkins (remote-exec):  libX11-common\
+aws_instance.jenkins (remote-exec):               noarch 1.6.7-3.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 165 k\
+aws_instance.jenkins (remote-exec):  libXau       x86_64 1.0.8-2.1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  29 k\
+aws_instance.jenkins (remote-exec):  libXext      x86_64 1.3.3-3.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  39 k\
+aws_instance.jenkins (remote-exec):  libXi        x86_64 1.7.9-1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  41 k\
+aws_instance.jenkins (remote-exec):  libXrender   x86_64 0.9.10-1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  26 k\
+aws_instance.jenkins (remote-exec):  libXtst      x86_64 1.2.3-1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  20 k\
+aws_instance.jenkins (remote-exec):  libfontenc   x86_64 1.1.3-3.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  31 k\
+aws_instance.jenkins (remote-exec):  libxcb       x86_64 1.12-1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 216 k\
+aws_instance.jenkins (remote-exec):  libxslt      x86_64 1.1.28-6.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 240 k\
+aws_instance.jenkins (remote-exec):  lksctp-tools x86_64 1.0.17-2.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  88 k\
+aws_instance.jenkins (remote-exec):  log4j-cve-2021-44228-hotpatch\
+aws_instance.jenkins (remote-exec):               noarch 1.1-13.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 144 k\
+aws_instance.jenkins (remote-exec):  pcsc-lite-libs\
+aws_instance.jenkins (remote-exec):               x86_64 1.8.8-7.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  35 k\
+aws_instance.jenkins (remote-exec):  python-javapackages\
+aws_instance.jenkins (remote-exec):               noarch 3.4.1-11.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  31 k\
+aws_instance.jenkins (remote-exec):  python-lxml  x86_64 3.2.1-4.amzn2.0.3\
+aws_instance.jenkins (remote-exec):                        amzn2-core 1.0 M\
+aws_instance.jenkins (remote-exec):  ttmkfdir     x86_64 3.0.9-42.amzn2.0.2\
+aws_instance.jenkins (remote-exec):                        amzn2-core  50 k\
+aws_instance.jenkins (remote-exec):  tzdata-java  noarch 2021e-1.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 190 k\
+aws_instance.jenkins (remote-exec):  xorg-x11-font-utils\
+aws_instance.jenkins (remote-exec):               x86_64 1:7.5-21.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 103 k\
+aws_instance.jenkins (remote-exec):  xorg-x11-fonts-Type1\
+aws_instance.jenkins (remote-exec):               noarch 7.5-9.amzn2\
+aws_instance.jenkins (remote-exec):                        amzn2-core 521 k\
+\
+aws_instance.jenkins (remote-exec): Transaction Summary\
+aws_instance.jenkins (remote-exec): ========================================\
+aws_instance.jenkins (remote-exec): Install  1 Package (+32 Dependent packages)\
+\
+aws_instance.jenkins (remote-exec): Total download size: 46 M\
+aws_instance.jenkins (remote-exec): Installed size: 183 M\
+aws_instance.jenkins (remote-exec): Downloading packages:\
+aws_instance.jenkins (remote-exec): (1/33): avahi-libs |  61 kB   00:00\
+aws_instance.jenkins (remote-exec): (2/33): copy-jdk-c |  21 kB   00:00\
+aws_instance.jenkins (remote-exec): (3/33): alsa-lib-1 | 425 kB   00:00\
+aws_instance.jenkins (remote-exec): (4/33): dejavu-fon |  64 kB   00:00\
+aws_instance.jenkins (remote-exec): (5/33): cups-libs- | 356 kB   00:00\
+aws_instance.jenkins (remote-exec): (6/33): dejavu-san | 1.4 MB   00:00\
+aws_instance.jenkins (remote-exec): (7/33): fontconfig | 253 kB   00:00\
+aws_instance.jenkins (remote-exec): (8/33): fontpackag |  10 kB   00:00\
+aws_instance.jenkins (remote-exec): (9/33): giflib-4.1 |  40 kB   00:00\
+aws_instance.jenkins (remote-exec): (10/33): javapacka |  73 kB   00:00\
+aws_instance.jenkins (remote-exec): (11/33): libICE-1. |  67 kB   00:00\
+aws_instance.jenkins (remote-exec): (12/33): libSM-1.2 |  39 kB   00:00\
+aws_instance.jenkins (remote-exec): (13/33): libX11-co | 165 kB   00:00\
+aws_instance.jenkins (remote-exec): (14/33): libXau-1. |  29 kB   00:00\
+aws_instance.jenkins (remote-exec): (15/33): libX11-1. | 606 kB   00:00\
+aws_instance.jenkins (remote-exec): (16/33): libXext-1 |  39 kB   00:00\
+aws_instance.jenkins (remote-exec): (17/33): libXrende |  26 kB   00:00\
+aws_instance.jenkins (remote-exec): (18/33): libXi-1.7 |  41 kB   00:00\
+aws_instance.jenkins (remote-exec): (19/33): java-11-o | 232 kB   00:00\
+aws_instance.jenkins (remote-exec): (20/33): libfonten |  31 kB   00:00\
+aws_instance.jenkins (remote-exec): (21/33): libxcb-1. | 216 kB   00:00\
+aws_instance.jenkins (remote-exec): (22/33): libXtst-1 |  20 kB   00:00\
+aws_instance.jenkins (remote-exec): (23/33): libxslt-1 | 240 kB   00:00\
+aws_instance.jenkins (remote-exec): (24/33): lksctp-to |  88 kB   00:00\
+aws_instance.jenkins (remote-exec): (25/33): log4j-cve | 144 kB   00:00\
+aws_instance.jenkins (remote-exec): (26/33): pcsc-lite |  35 kB   00:00\
+aws_instance.jenkins (remote-exec): (27/33): python-ja |  31 kB   00:00\
+aws_instance.jenkins (remote-exec): (28/33): ttmkfdir- |  50 kB   00:00\
+aws_instance.jenkins (remote-exec): (29/33): python-lx | 1.0 MB   00:00\
+aws_instance.jenkins (remote-exec): (30/33): tzdata-ja | 190 kB   00:00\
+aws_instance.jenkins (remote-exec): (31/33): xorg-x11- | 103 kB   00:00\
+aws_instance.jenkins (remote-exec): (33/33): xorg- 22% |  10 MB   --:-- ETA\
+aws_instance.jenkins (remote-exec): (32/33): xorg-x11- | 521 kB   00:00\
+aws_instance.jenkins (remote-exec): (33/33): java- 38% |  18 MB   00:03 ETA\
+aws_instance.jenkins (remote-exec): (33/33): java- 59% |  28 MB   00:02 ETA\
+aws_instance.jenkins (remote-exec): (33/33): java- 93% |  43 MB   00:00 ETA\
+aws_instance.jenkins (remote-exec): (33/33): java-11-o |  39 MB   00:01\
+aws_instance.jenkins (remote-exec): ----------------------------------------\
+aws_instance.jenkins (remote-exec): Total       25 MB/s |  46 MB  00:01\
+aws_instance.jenkins (remote-exec): Running transaction check\
+aws_instance.jenkins (remote-exec): Running transaction test\
+aws_instance.jenkins (remote-exec): Transaction test succeeded\
+aws_instance.jenkins (remote-exec): Running transaction\
+aws_instance.jenkins (remote-exec):   Installing : libICE- [        ]  1/33\
+aws_instance.jenkins (remote-exec):   Installing : libICE- [###     ]  1/33\
+aws_instance.jenkins (remote-exec):   Installing : libICE- [#####   ]  1/33\
+aws_instance.jenkins (remote-exec):   Installing : libICE- [####### ]  1/33\
+aws_instance.jenkins (remote-exec):   Installing : libICE-1.0.9-9.a    1/33\
+
+\f1\b aws_instance.jenkins: Still creating... (1m0s elapsed)
+\f0\b0 \
+aws_instance.jenkins (remote-exec):   Installing : libxslt [        ]  2/33\
+aws_instance.jenkins (remote-exec):   Installing : libxslt [#       ]  2/33\
+aws_instance.jenkins (remote-exec):   Installing : libxslt [##      ]  2/33\
+aws_instance.jenkins (remote-exec):   Installing : libxslt [###     ]  2/33\
+aws_instance.jenkins (remote-exec):   Installing : libxslt [####    ]  2/33\
+aws_instance.jenkins (remote-exec):   Installing : libxslt [#####   ]  2/33\
+aws_instance.jenkins (remote-exec):   Installing : libxslt [######  ]  2/33\
+aws_instance.jenkins (remote-exec):   Installing : libxslt [####### ]  2/33\
+aws_instance.jenkins (remote-exec):   Installing : libxslt-1.1.28-6    2/33\
+aws_instance.jenkins (remote-exec):   Installing : fontpac [        ]  3/33\
+aws_instance.jenkins (remote-exec):   Installing : fontpac [#       ]  3/33\
+aws_instance.jenkins (remote-exec):   Installing : fontpac [##      ]  3/33\
+aws_instance.jenkins (remote-exec):   Installing : fontpac [###     ]  3/33\
+aws_instance.jenkins (remote-exec):   Installing : fontpac [#####   ]  3/33\
+aws_instance.jenkins (remote-exec):   Installing : fontpac [######  ]  3/33\
+aws_instance.jenkins (remote-exec):   Installing : fontpackages-fil    3/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [        ]  4/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [####    ]  4/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [######  ]  4/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [####### ]  4/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu-fonts-com    4/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [        ]  5/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [#       ]  5/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [##      ]  5/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [###     ]  5/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [####    ]  5/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [#####   ]  5/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [######  ]  5/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu- [####### ]  5/33\
+aws_instance.jenkins (remote-exec):   Installing : dejavu-sans-font    5/33\
+aws_instance.jenkins (remote-exec):   Installing : fontcon [        ]  6/33\
+aws_instance.jenkins (remote-exec):   Installing : fontcon [#       ]  6/33\
+aws_instance.jenkins (remote-exec):   Installing : fontcon [##      ]  6/33\
+aws_instance.jenkins (remote-exec):   Installing : fontcon [###     ]  6/33\
+aws_instance.jenkins (remote-exec):   Installing : fontcon [####    ]  6/33\
+aws_instance.jenkins (remote-exec):   Installing : fontcon [#####   ]  6/33\
+aws_instance.jenkins (remote-exec):   Installing : fontcon [######  ]  6/33\
+aws_instance.jenkins (remote-exec):   Installing : fontcon [####### ]  6/33\
+aws_instance.jenkins (remote-exec):   Installing : fontconfig-2.13.    6/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [        ]  7/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [#       ]  7/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [##      ]  7/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [###     ]  7/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [####    ]  7/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [#####   ]  7/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [######  ]  7/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [####### ]  7/33\
+aws_instance.jenkins (remote-exec):   Installing : python-lxml-3.2.    7/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [        ]  8/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [#       ]  8/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [##      ]  8/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [####    ]  8/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [#####   ]  8/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [######  ]  8/33\
+aws_instance.jenkins (remote-exec):   Installing : python- [####### ]  8/33\
+aws_instance.jenkins (remote-exec):   Installing : python-javapacka    8/33\
+aws_instance.jenkins (remote-exec):   Installing : javapac [        ]  9/33\
+aws_instance.jenkins (remote-exec):   Installing : javapac [#       ]  9/33\
+aws_instance.jenkins (remote-exec):   Installing : javapac [##      ]  9/33\
+aws_instance.jenkins (remote-exec):   Installing : javapac [###     ]  9/33\
+aws_instance.jenkins (remote-exec):   Installing : javapac [####    ]  9/33\
+aws_instance.jenkins (remote-exec):   Installing : javapac [#####   ]  9/33\
+aws_instance.jenkins (remote-exec):   Installing : javapac [######  ]  9/33\
+aws_instance.jenkins (remote-exec):   Installing : javapac [####### ]  9/33\
+aws_instance.jenkins (remote-exec):   Installing : javapackages-too    9/33\
+aws_instance.jenkins (remote-exec):   Installing : libSM-1 [        ] 10/33\
+aws_instance.jenkins (remote-exec):   Installing : libSM-1 [###     ] 10/33\
+aws_instance.jenkins (remote-exec):   Installing : libSM-1 [####### ] 10/33\
+aws_instance.jenkins (remote-exec):   Installing : libSM-1.2.2-2.am   10/33\
+aws_instance.jenkins (remote-exec):   Installing : alsa-li [        ] 11/33\
+aws_instance.jenkins (remote-exec):   Installing : alsa-li [#       ] 11/33\
+aws_instance.jenkins (remote-exec):   Installing : alsa-li [##      ] 11/33\
+aws_instance.jenkins (remote-exec):   Installing : alsa-li [###     ] 11/33\
+aws_instance.jenkins (remote-exec):   Installing : alsa-li [####    ] 11/33\
+aws_instance.jenkins (remote-exec):   Installing : alsa-li [#####   ] 11/33\
+aws_instance.jenkins (remote-exec):   Installing : alsa-li [######  ] 11/33\
+aws_instance.jenkins (remote-exec):   Installing : alsa-li [####### ] 11/33\
+aws_instance.jenkins (remote-exec):   Installing : alsa-lib-1.1.4.1   11/33\
+aws_instance.jenkins (remote-exec):   Installing : copy-jd [        ] 12/33\
+aws_instance.jenkins (remote-exec):   Installing : copy-jd [####    ] 12/33\
+aws_instance.jenkins (remote-exec):   Installing : copy-jd [####### ] 12/33\
+aws_instance.jenkins (remote-exec):   Installing : copy-jdk-configs   12/33\
+aws_instance.jenkins (remote-exec):   Installing : log4j-c [        ] 13/33\
+aws_instance.jenkins (remote-exec):   Installing : log4j-c [####    ] 13/33\
+aws_instance.jenkins (remote-exec):   Installing : log4j-c [####### ] 13/33\
+aws_instance.jenkins (remote-exec):   Installing : log4j-cve-2021-4   13/33\
+aws_instance.jenkins (remote-exec): Created symlink from /etc/systemd/system/multi-user.target.wants/log4j-cve-2021-44228-hotpatch.service to /usr/lib/systemd/system/log4j-cve-2021-44228-hotpatch.service.\
+aws_instance.jenkins (remote-exec):   Installing : libfont [        ] 14/33\
+aws_instance.jenkins (remote-exec):   Installing : libfont [###     ] 14/33\
+aws_instance.jenkins (remote-exec):   Installing : libfont [####    ] 14/33\
+aws_instance.jenkins (remote-exec):   Installing : libfont [####### ] 14/33\
+aws_instance.jenkins (remote-exec):   Installing : libfontenc-1.1.3   14/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:xorg- [        ] 15/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:xorg- [#       ] 15/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:xorg- [##      ] 15/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:xorg- [###     ] 15/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:xorg- [####    ] 15/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:xorg- [#####   ] 15/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:xorg- [######  ] 15/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:xorg- [####### ] 15/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:xorg-x11-font-   15/33\
+aws_instance.jenkins (remote-exec):   Installing : pcsc-li [        ] 16/33\
+aws_instance.jenkins (remote-exec):   Installing : pcsc-li [####### ] 16/33\
+aws_instance.jenkins (remote-exec):   Installing : pcsc-lite-libs-1   16/33\
+aws_instance.jenkins (remote-exec):   Installing : avahi-l [        ] 17/33\
+aws_instance.jenkins (remote-exec):   Installing : avahi-l [####    ] 17/33\
+aws_instance.jenkins (remote-exec):   Installing : avahi-l [####### ] 17/33\
+aws_instance.jenkins (remote-exec):   Installing : avahi-libs-0.6.3   17/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:cups- [        ] 18/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:cups- [#       ] 18/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:cups- [##      ] 18/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:cups- [###     ] 18/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:cups- [####    ] 18/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:cups- [#####   ] 18/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:cups- [######  ] 18/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:cups- [####### ] 18/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:cups-libs-1.6.   18/33\
+aws_instance.jenkins (remote-exec):   Installing : libXau- [        ] 19/33\
+aws_instance.jenkins (remote-exec):   Installing : libXau- [##      ] 19/33\
+aws_instance.jenkins (remote-exec):   Installing : libXau- [######  ] 19/33\
+aws_instance.jenkins (remote-exec):   Installing : libXau- [####### ] 19/33\
+aws_instance.jenkins (remote-exec):   Installing : libXau-1.0.8-2.1   19/33\
+aws_instance.jenkins (remote-exec):   Installing : libxcb- [        ] 20/33\
+aws_instance.jenkins (remote-exec):   Installing : libxcb- [#       ] 20/33\
+aws_instance.jenkins (remote-exec):   Installing : libxcb- [##      ] 20/33\
+aws_instance.jenkins (remote-exec):   Installing : libxcb- [###     ] 20/33\
+aws_instance.jenkins (remote-exec):   Installing : libxcb- [####    ] 20/33\
+aws_instance.jenkins (remote-exec):   Installing : libxcb- [#####   ] 20/33\
+aws_instance.jenkins (remote-exec):   Installing : libxcb- [######  ] 20/33\
+aws_instance.jenkins (remote-exec):   Installing : libxcb- [####### ] 20/33\
+aws_instance.jenkins (remote-exec):   Installing : libxcb-1.12-1.am   20/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [        ] 21/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [#       ] 21/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [##      ] 21/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [###     ] 21/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [####    ] 21/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [#####   ] 21/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [######  ] 21/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [####### ] 21/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11-common-1.   21/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [        ] 22/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [#       ] 22/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [##      ] 22/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [###     ] 22/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [####    ] 22/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [#####   ] 22/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [######  ] 22/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11- [####### ] 22/33\
+aws_instance.jenkins (remote-exec):   Installing : libX11-1.6.7-3.a   22/33\
+aws_instance.jenkins (remote-exec):   Installing : libXext [        ] 23/33\
+aws_instance.jenkins (remote-exec):   Installing : libXext [#####   ] 23/33\
+aws_instance.jenkins (remote-exec):   Installing : libXext [######  ] 23/33\
+aws_instance.jenkins (remote-exec):   Installing : libXext [####### ] 23/33\
+aws_instance.jenkins (remote-exec):   Installing : libXext-1.3.3-3.   23/33\
+aws_instance.jenkins (remote-exec):   Installing : libXi-1 [        ] 24/33\
+aws_instance.jenkins (remote-exec):   Installing : libXi-1 [####### ] 24/33\
+aws_instance.jenkins (remote-exec):   Installing : libXi-1.7.9-1.am   24/33\
+aws_instance.jenkins (remote-exec):   Installing : libXtst [        ] 25/33\
+aws_instance.jenkins (remote-exec):   Installing : libXtst [######  ] 25/33\
+aws_instance.jenkins (remote-exec):   Installing : libXtst [####### ] 25/33\
+aws_instance.jenkins (remote-exec):   Installing : libXtst-1.2.3-1.   25/33\
+aws_instance.jenkins (remote-exec):   Installing : libXren [        ] 26/33\
+aws_instance.jenkins (remote-exec):   Installing : libXren [####### ] 26/33\
+aws_instance.jenkins (remote-exec):   Installing : libXrender-0.9.1   26/33\
+aws_instance.jenkins (remote-exec):   Installing : giflib- [        ] 27/33\
+aws_instance.jenkins (remote-exec):   Installing : giflib- [###     ] 27/33\
+aws_instance.jenkins (remote-exec):   Installing : giflib- [####    ] 27/33\
+aws_instance.jenkins (remote-exec):   Installing : giflib- [####### ] 27/33\
+aws_instance.jenkins (remote-exec):   Installing : giflib-4.1.6-9.a   27/33\
+aws_instance.jenkins (remote-exec):   Installing : ttmkfdi [        ] 28/33\
+aws_instance.jenkins (remote-exec):   Installing : ttmkfdi [####    ] 28/33\
+aws_instance.jenkins (remote-exec):   Installing : ttmkfdi [####### ] 28/33\
+aws_instance.jenkins (remote-exec):   Installing : ttmkfdir-3.0.9-4   28/33\
+aws_instance.jenkins (remote-exec):   Installing : xorg-x1 [        ] 29/33\
+aws_instance.jenkins (remote-exec):   Installing : xorg-x1 [#       ] 29/33\
+aws_instance.jenkins (remote-exec):   Installing : xorg-x1 [##      ] 29/33\
+aws_instance.jenkins (remote-exec):   Installing : xorg-x1 [###     ] 29/33\
+aws_instance.jenkins (remote-exec):   Installing : xorg-x1 [####    ] 29/33\
+aws_instance.jenkins (remote-exec):   Installing : xorg-x1 [#####   ] 29/33\
+aws_instance.jenkins (remote-exec):   Installing : xorg-x1 [######  ] 29/33\
+aws_instance.jenkins (remote-exec):   Installing : xorg-x1 [####### ] 29/33\
+aws_instance.jenkins (remote-exec):   Installing : xorg-x11-fonts-T   29/33\
+aws_instance.jenkins (remote-exec):   Installing : lksctp- [        ] 30/33\
+aws_instance.jenkins (remote-exec):   Installing : lksctp- [#       ] 30/33\
+aws_instance.jenkins (remote-exec):   Installing : lksctp- [##      ] 30/33\
+aws_instance.jenkins (remote-exec):   Installing : lksctp- [###     ] 30/33\
+aws_instance.jenkins (remote-exec):   Installing : lksctp- [####    ] 30/33\
+aws_instance.jenkins (remote-exec):   Installing : lksctp- [#####   ] 30/33\
+aws_instance.jenkins (remote-exec):   Installing : lksctp- [####### ] 30/33\
+aws_instance.jenkins (remote-exec):   Installing : lksctp-tools-1.0   30/33\
+aws_instance.jenkins (remote-exec):   Installing : tzdata- [        ] 31/33\
+aws_instance.jenkins (remote-exec):   Installing : tzdata- [#       ] 31/33\
+aws_instance.jenkins (remote-exec):   Installing : tzdata- [##      ] 31/33\
+aws_instance.jenkins (remote-exec):   Installing : tzdata- [###     ] 31/33\
+aws_instance.jenkins (remote-exec):   Installing : tzdata- [####    ] 31/33\
+aws_instance.jenkins (remote-exec):   Installing : tzdata- [#####   ] 31/33\
+aws_instance.jenkins (remote-exec):   Installing : tzdata- [######  ] 31/33\
+aws_instance.jenkins (remote-exec):   Installing : tzdata- [####### ] 31/33\
+aws_instance.jenkins (remote-exec):   Installing : tzdata-java-2021   31/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [        ] 32/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [#       ] 32/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [##      ] 32/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [###     ] 32/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [####    ] 32/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [#####   ] 32/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [######  ] 32/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [####### ] 32/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java-11-openjd   32/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [        ] 33/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [#       ] 33/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [##      ] 33/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [###     ] 33/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [####    ] 33/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [#####   ] 33/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [######  ] 33/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java- [####### ] 33/33\
+aws_instance.jenkins (remote-exec):   Installing : 1:java-11-openjd   33/33\
+aws_instance.jenkins (remote-exec):   Verifying  : 1:java-11-openjd    1/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libSM-1.2.2-2.am    2/33\
+aws_instance.jenkins (remote-exec):   Verifying  : python-lxml-3.2.    3/33\
+aws_instance.jenkins (remote-exec):   Verifying  : fontpackages-fil    4/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libxcb-1.12-1.am    5/33\
+aws_instance.jenkins (remote-exec):   Verifying  : tzdata-java-2021    6/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libXext-1.3.3-3.    7/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libX11-1.6.7-3.a    8/33\
+aws_instance.jenkins (remote-exec):   Verifying  : lksctp-tools-1.0    9/33\
+aws_instance.jenkins (remote-exec):   Verifying  : ttmkfdir-3.0.9-4   10/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libX11-common-1.   11/33\
+aws_instance.jenkins (remote-exec):   Verifying  : dejavu-fonts-com   12/33\
+aws_instance.jenkins (remote-exec):   Verifying  : 1:cups-libs-1.6.   13/33\
+
+\f1\b aws_instance.jenkins: Still creating... (1m10s elapsed)
+\f0\b0 \
+aws_instance.jenkins (remote-exec):   Verifying  : libXau-1.0.8-2.1   14/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libxslt-1.1.28-6   15/33\
+aws_instance.jenkins (remote-exec):   Verifying  : xorg-x11-fonts-T   16/33\
+aws_instance.jenkins (remote-exec):   Verifying  : 1:java-11-openjd   17/33\
+aws_instance.jenkins (remote-exec):   Verifying  : 1:xorg-x11-font-   18/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libXrender-0.9.1   19/33\
+aws_instance.jenkins (remote-exec):   Verifying  : avahi-libs-0.6.3   20/33\
+aws_instance.jenkins (remote-exec):   Verifying  : dejavu-sans-font   21/33\
+aws_instance.jenkins (remote-exec):   Verifying  : fontconfig-2.13.   22/33\
+aws_instance.jenkins (remote-exec):   Verifying  : pcsc-lite-libs-1   23/33\
+aws_instance.jenkins (remote-exec):   Verifying  : giflib-4.1.6-9.a   24/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libXi-1.7.9-1.am   25/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libfontenc-1.1.3   26/33\
+aws_instance.jenkins (remote-exec):   Verifying  : log4j-cve-2021-4   27/33\
+aws_instance.jenkins (remote-exec):   Verifying  : python-javapacka   28/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libXtst-1.2.3-1.   29/33\
+aws_instance.jenkins (remote-exec):   Verifying  : copy-jdk-configs   30/33\
+aws_instance.jenkins (remote-exec):   Verifying  : alsa-lib-1.1.4.1   31/33\
+aws_instance.jenkins (remote-exec):   Verifying  : libICE-1.0.9-9.a   32/33\
+aws_instance.jenkins (remote-exec):   Verifying  : javapackages-too   33/33\
+\
+aws_instance.jenkins (remote-exec): Installed:\
+aws_instance.jenkins (remote-exec):   java-11-openjdk.x86_64 1:11.0.13.0.8-1.amzn2.0.3\
+\
+aws_instance.jenkins (remote-exec): Dependency Installed:\
+aws_instance.jenkins (remote-exec):   alsa-lib.x86_64 0:1.1.4.1-2.amzn2\
+aws_instance.jenkins (remote-exec):   avahi-libs.x86_64 0:0.6.31-20.amzn2\
+aws_instance.jenkins (remote-exec):   copy-jdk-configs.noarch 0:3.3-10.amzn2\
+aws_instance.jenkins (remote-exec):   cups-libs.x86_64 1:1.6.3-51.amzn2\
+aws_instance.jenkins (remote-exec):   dejavu-fonts-common.noarch 0:2.33-6.amzn2\
+aws_instance.jenkins (remote-exec):   dejavu-sans-fonts.noarch 0:2.33-6.amzn2\
+aws_instance.jenkins (remote-exec):   fontconfig.x86_64 0:2.13.0-4.3.amzn2\
+aws_instance.jenkins (remote-exec):   fontpackages-filesystem.noarch 0:1.44-8.amzn2\
+aws_instance.jenkins (remote-exec):   giflib.x86_64 0:4.1.6-9.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   java-11-openjdk-headless.x86_64 1:11.0.13.0.8-1.amzn2.0.3\
+aws_instance.jenkins (remote-exec):   javapackages-tools.noarch 0:3.4.1-11.amzn2\
+aws_instance.jenkins (remote-exec):   libICE.x86_64 0:1.0.9-9.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libSM.x86_64 0:1.2.2-2.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libX11.x86_64 0:1.6.7-3.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libX11-common.noarch 0:1.6.7-3.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libXau.x86_64 0:1.0.8-2.1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libXext.x86_64 0:1.3.3-3.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libXi.x86_64 0:1.7.9-1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libXrender.x86_64 0:0.9.10-1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libXtst.x86_64 0:1.2.3-1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libfontenc.x86_64 0:1.1.3-3.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libxcb.x86_64 0:1.12-1.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   libxslt.x86_64 0:1.1.28-6.amzn2\
+aws_instance.jenkins (remote-exec):   lksctp-tools.x86_64 0:1.0.17-2.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   log4j-cve-2021-44228-hotpatch.noarch 0:1.1-13.amzn2\
+aws_instance.jenkins (remote-exec):   pcsc-lite-libs.x86_64 0:1.8.8-7.amzn2\
+aws_instance.jenkins (remote-exec):   python-javapackages.noarch 0:3.4.1-11.amzn2\
+aws_instance.jenkins (remote-exec):   python-lxml.x86_64 0:3.2.1-4.amzn2.0.3\
+aws_instance.jenkins (remote-exec):   ttmkfdir.x86_64 0:3.0.9-42.amzn2.0.2\
+aws_instance.jenkins (remote-exec):   tzdata-java.noarch 0:2021e-1.amzn2\
+aws_instance.jenkins (remote-exec):   xorg-x11-font-utils.x86_64 1:7.5-21.amzn2\
+aws_instance.jenkins (remote-exec):   xorg-x11-fonts-Type1.noarch 0:7.5-9.amzn2\
+\
+aws_instance.jenkins (remote-exec): Complete!\
+aws_instance.jenkins (remote-exec):   0  ansible2                 available    \\\
+aws_instance.jenkins (remote-exec):         [ =2.4.2  =2.4.6  =2.8  =stable ]\
+aws_instance.jenkins (remote-exec):   2  httpd_modules            available    [ =1.0  =stable ]\
+aws_instance.jenkins (remote-exec):   3  memcached1.5             available    \\\
+aws_instance.jenkins (remote-exec):         [ =1.5.1  =1.5.16  =1.5.17 ]\
+aws_instance.jenkins (remote-exec):   5  postgresql9.6            available    \\\
+aws_instance.jenkins (remote-exec):         [ =9.6.6  =9.6.8  =stable ]\
+aws_instance.jenkins (remote-exec):   6  postgresql10             available    [ =10  =stable ]\
+aws_instance.jenkins (remote-exec):   9  R3.4                     available    [ =3.4.3  =stable ]\
+aws_instance.jenkins (remote-exec):  10  rust1                    available    \\\
+aws_instance.jenkins (remote-exec):         [ =1.22.1  =1.26.0  =1.26.1  =1.27.2  =1.31.0  =1.38.0\
+aws_instance.jenkins (remote-exec):           =stable ]\
+aws_instance.jenkins (remote-exec):  11  vim                      available    [ =8.0  =stable ]\
+aws_instance.jenkins (remote-exec):  18  libreoffice              available    \\\
+aws_instance.jenkins (remote-exec):         [ =5.0.6.2_15  =5.3.6.1  =stable ]\
+aws_instance.jenkins (remote-exec):  19  gimp                     available    [ =2.8.22 ]\
+aws_instance.jenkins (remote-exec):  20  \cf3 docker=latest            enabled    \cf2   \\\
+aws_instance.jenkins (remote-exec):         [ =17.12.1  =18.03.1  =18.06.1  =18.09.9  =stable ]\
+aws_instance.jenkins (remote-exec):  21  mate-desktop1.x          available    \\\
+aws_instance.jenkins (remote-exec):         [ =1.19.0  =1.20.0  =stable ]\
+aws_instance.jenkins (remote-exec):  22  GraphicsMagick1.3        available    \\\
+aws_instance.jenkins (remote-exec):         [ =1.3.29  =1.3.32  =1.3.34  =stable ]\
+aws_instance.jenkins (remote-exec):  23  tomcat8.5                available    \\\
+aws_instance.jenkins (remote-exec):         [ =8.5.31  =8.5.32  =8.5.38  =8.5.40  =8.5.42  =8.5.50\
+aws_instance.jenkins (remote-exec):           =stable ]\
+aws_instance.jenkins (remote-exec):  24  epel                     available    [ =7.11  =stable ]\
+aws_instance.jenkins (remote-exec):  25  testing                  available    [ =1.0  =stable ]\
+aws_instance.jenkins (remote-exec):  26  ecs                      available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  27  corretto8                available    \\\
+aws_instance.jenkins (remote-exec):         [ =1.8.0_192  =1.8.0_202  =1.8.0_212  =1.8.0_222  =1.8.0_232\
+aws_instance.jenkins (remote-exec):           =1.8.0_242  =stable ]\
+aws_instance.jenkins (remote-exec):  28  firecracker              available    [ =0.11  =stable ]\
+aws_instance.jenkins (remote-exec):  29  golang1.11               available    \\\
+aws_instance.jenkins (remote-exec):         [ =1.11.3  =1.11.11  =1.11.13  =stable ]\
+aws_instance.jenkins (remote-exec):  30  squid4                   available    [ =4  =stable ]\
+aws_instance.jenkins (remote-exec):  32  lustre2.10               available    \\\
+aws_instance.jenkins (remote-exec):         [ =2.10.5  =2.10.8  =stable ]\
+aws_instance.jenkins (remote-exec):  33  \cf3 java-openjdk11=latest    enabled    \cf2   [ =11  =stable ]\
+aws_instance.jenkins (remote-exec):  34  lynis                    available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  35  kernel-ng                available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  36  BCC                      available    [ =0.x  =stable ]\
+aws_instance.jenkins (remote-exec):  37  mono                     available    [ =5.x  =stable ]\
+aws_instance.jenkins (remote-exec):  38  nginx1                   available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  39  ruby2.6                  available    [ =2.6  =stable ]\
+aws_instance.jenkins (remote-exec):  40  mock                     available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  41  postgresql11             available    [ =11  =stable ]\
+aws_instance.jenkins (remote-exec):  42  php7.4                   available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  43  livepatch                available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  44  python3.8                available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  45  haproxy2                 available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  46  collectd                 available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  47  aws-nitro-enclaves-cli   available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  48  R4                       available    [ =stable ]\
+aws_instance.jenkins (remote-exec):   _  kernel-5.4               available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  50  selinux-ng               available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  51  php8.0                   available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  52  tomcat9                  available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  53  unbound1.13              available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  54  mariadb10.5              available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  55  \cf3 kernel-5.10=latest       enabled    \cf2   [ =stable ]\
+aws_instance.jenkins (remote-exec):  56  redis6                   available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  57  ruby3.0                  available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  58  postgresql12             available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  59  postgresql13             available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  60  mock2                    available    [ =stable ]\
+aws_instance.jenkins (remote-exec):  61  dnsmasq2.85              available    [ =stable ]\
+aws_instance.jenkins (remote-exec): openjdk version "11.0.13" 2021-10-19 LTS\
+aws_instance.jenkins (remote-exec): OpenJDK Runtime Environment 18.9 (build 11.0.13+8-LTS)\
+aws_instance.jenkins (remote-exec): OpenJDK 64-Bit Server VM 18.9 (build 11.0.13+8-LTS, mixed mode, sharing)\
+aws_instance.jenkins (remote-exec): --2022-04-02 22:45:56--  http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo\
+aws_instance.jenkins (remote-exec): Resolving pkg.jenkins-ci.org (pkg.jenkins-ci.org)... 52.202.51.185\
+aws_instance.jenkins (remote-exec): Connecting to pkg.jenkins-ci.org (pkg.jenkins-ci.org)|52.202.51.185|:80... connected.\
+aws_instance.jenkins (remote-exec): HTTP request sent, awaiting response... 200 OK\
+aws_instance.jenkins (remote-exec): Length: 85\
+aws_instance.jenkins (remote-exec): Saving to: \'91/etc/yum.repos.d/jenkins.repo\'92\
+\
+aws_instance.jenkins (remote-exec):  0%  0           --.-K/s\
+aws_instance.jenkins (remote-exec): 100% 85          --.-K/s   in 0s\
+\
+aws_instance.jenkins (remote-exec): 2022-04-02 22:45:56 (7.29 MB/s) - \'91/etc/yum.repos.d/jenkins.repo\'92 saved [85/85]\
+\
+aws_instance.jenkins (remote-exec): Loaded plugins: extras_suggestions,\
+aws_instance.jenkins (remote-exec):               : langpacks, priorities,\
+aws_instance.jenkins (remote-exec):               : update-motd\
+aws_instance.jenkins (remote-exec): Existing lock /var/run/yum.pid: another copy is running as pid 3636.\
+aws_instance.jenkins (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...\
+aws_instance.jenkins (remote-exec):   The other application is: yum\
+aws_instance.jenkins (remote-exec):     Memory :  90 M RSS (382 MB VSZ)\
+aws_instance.jenkins (remote-exec):     Started: Sat Apr  2 22:45:56 2022 - 00:01 ago\
+aws_instance.jenkins (remote-exec):     State  : Running, pid: 3636\
+aws_instance.jenkins (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...\
+aws_instance.jenkins (remote-exec):   The other application is: yum\
+aws_instance.jenkins (remote-exec):     Memory : 159 M RSS (451 MB VSZ)\
+aws_instance.jenkins (remote-exec):     Started: Sat Apr  2 22:45:56 2022 - 00:03 ago\
+aws_instance.jenkins (remote-exec):     State  : Running, pid: 3636\
+aws_instance.jenkins (remote-exec): Resolving Dependencies\
+aws_instance.jenkins (remote-exec): --> Running transaction check\
+aws_instance.jenkins (remote-exec): ---> Package jenkins.noarch 0:2.332.1-1.1 will be installed\
+aws_instance.jenkins (remote-exec): --> Finished Dependency Resolution\
+\
+aws_instance.jenkins (remote-exec): Dependencies Resolved\
+\
+aws_instance.jenkins (remote-exec): ========================================\
+aws_instance.jenkins (remote-exec):  Package\
+aws_instance.jenkins (remote-exec):        Arch   Version     Repository\
+aws_instance.jenkins (remote-exec):                                    Size\
+aws_instance.jenkins (remote-exec): ========================================\
+aws_instance.jenkins (remote-exec): Installing:\
+aws_instance.jenkins (remote-exec):  jenkins\
+aws_instance.jenkins (remote-exec):        noarch 2.332.1-1.1 jenkins  90 M\
+\
+aws_instance.jenkins (remote-exec): Transaction Summary\
+aws_instance.jenkins (remote-exec): ========================================\
+aws_instance.jenkins (remote-exec): Install  1 Package\
+\
+aws_instance.jenkins (remote-exec): Total download size: 90 M\
+aws_instance.jenkins (remote-exec): Installed size: 91 M\
+aws_instance.jenkins (remote-exec): Downloading packages:\
+aws_instance.jenkins (remote-exec): jenkins-2.332.1 1% | 1.0 MB   --:-- ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332.1 2% | 2.3 MB   01:00 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332.1 4% | 3.6 MB   00:53 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332.1 5% | 5.0 MB   00:47 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332.1 6% | 6.3 MB   00:43 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332.1 8% | 7.7 MB   00:39 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332.1 9% | 8.9 MB   00:36 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 11% |  10 MB   00:34 ETA\
+
+\f1\b aws_instance.jenkins: Still creating... (1m20s elapsed)
+\f0\b0 \
+aws_instance.jenkins (remote-exec): jenkins-2.332. 12% |  11 MB   00:32 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 13% |  13 MB   00:31 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 15% |  14 MB   00:30 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 16% |  15 MB   00:28 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 17% |  16 MB   00:27 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 19% |  17 MB   00:26 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 20% |  18 MB   00:25 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 21% |  20 MB   00:24 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 23% |  21 MB   00:23 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 24% |  22 MB   00:22 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 26% |  24 MB   00:21 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 27% |  25 MB   00:20 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 29% |  26 MB   00:19 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 30% |  27 MB   00:19 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 31% |  29 MB   00:18 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 33% |  30 MB   00:18 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 34% |  31 MB   00:17 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 35% |  32 MB   00:16 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 37% |  34 MB   00:16 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 38% |  35 MB   00:15 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 40% |  36 MB   00:15 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 41% |  38 MB   00:14 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 43% |  39 MB   00:14 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 44% |  40 MB   00:13 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 45% |  41 MB   00:13 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 47% |  43 MB   00:12 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 48% |  44 MB   00:12 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 50% |  45 MB   00:12 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 51% |  47 MB   00:11 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 53% |  48 MB   00:11 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 54% |  49 MB   00:10 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 56% |  51 MB   00:10 ETA\
+
+\f1\b aws_instance.jenkins: Still creating... (1m30s elapsed)
+\f0\b0 \
+aws_instance.jenkins (remote-exec): jenkins-2.332. 57% |  52 MB   00:09 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 59% |  53 MB   00:09 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 60% |  55 MB   00:09 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 61% |  56 MB   00:08 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 63% |  57 MB   00:08 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 64% |  58 MB   00:08 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 66% |  60 MB   00:07 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 67% |  61 MB   00:07 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 68% |  62 MB   00:07 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 70% |  64 MB   00:06 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 72% |  65 MB   00:06 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 73% |  66 MB   00:06 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 74% |  67 MB   00:05 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 76% |  69 MB   00:05 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 77% |  70 MB   00:05 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 79% |  71 MB   00:04 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 80% |  73 MB   00:04 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 81% |  74 MB   00:04 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 83% |  75 MB   00:03 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 84% |  76 MB   00:03 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 86% |  78 MB   00:03 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 87% |  79 MB   00:02 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 88% |  80 MB   00:02 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 90% |  81 MB   00:02 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 91% |  83 MB   00:01 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 93% |  84 MB   00:01 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 94% |  85 MB   00:01 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 95% |  87 MB   00:00 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 97% |  88 MB   00:00 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332. 98% |  89 MB   00:00 ETA\
+aws_instance.jenkins (remote-exec): jenkins-2.332.1-1. |  90 MB   00:23\
+aws_instance.jenkins (remote-exec): Running transaction check\
+aws_instance.jenkins (remote-exec): Running transaction test\
+aws_instance.jenkins (remote-exec): Transaction test succeeded\
+aws_instance.jenkins (remote-exec): Running transaction\
+
+\f1\b aws_instance.jenkins: Still creating... (1m40s elapsed)
+\f0\b0 \
+aws_instance.jenkins (remote-exec):   Installing : jenkins- [         ] 1/1\
+aws_instance.jenkins (remote-exec):   Installing : jenkins- [#        ] 1/1\
+aws_instance.jenkins (remote-exec):   Installing : jenkins- [##       ] 1/1\
+aws_instance.jenkins (remote-exec):   Installing : jenkins- [###      ] 1/1\
+aws_instance.jenkins (remote-exec):   Installing : jenkins- [####     ] 1/1\
+aws_instance.jenkins (remote-exec):   Installing : jenkins- [#####    ] 1/1\
+aws_instance.jenkins (remote-exec):   Installing : jenkins- [######   ] 1/1\
+aws_instance.jenkins (remote-exec):   Installing : jenkins- [#######  ] 1/1\
+aws_instance.jenkins (remote-exec):   Installing : jenkins- [######## ] 1/1\
+aws_instance.jenkins (remote-exec):   Installing : jenkins-2.332.1-1.   1/1\
+aws_instance.jenkins (remote-exec):   Verifying  : jenkins-2.332.1-1.   1/1\
+\
+aws_instance.jenkins (remote-exec): Installed:\
+aws_instance.jenkins (remote-exec):   jenkins.noarch 0:2.332.1-1.1\
+\
+aws_instance.jenkins (remote-exec): Complete!\
+aws_instance.jenkins (remote-exec): Note: Forwarding request to 'systemctl enable jenkins.service'.\
+aws_instance.jenkins (remote-exec): Created symlink from /etc/systemd/system/multi-user.target.wants/jenkins.service to /usr/lib/systemd/system/jenkins.service.\
+aws_instance.jenkins (remote-exec): Starting jenkins (via systemctl):\
+
+\f1\b aws_instance.jenkins: Still creating... (1m50s elapsed)
+\f0\b0 \
+
+\f1\b aws_instance.jenkins: Still creating... (2m0s elapsed)
+\f0\b0 \
+aws_instance.jenkins (remote-exec):                        [\cf4   OK  \cf2 ]\
+aws_instance.jenkins (remote-exec): a39b8aea82ca4b2da5338363e25c82e9\
+
+\f1\b aws_instance.jenkins: Creation complete after 2m7s (ID: i-0757124b97fb645dc)
+\f0\b0 \
+\
+
+\f1\b \cf4 Apply complete! Resources: 3 added, 0 changed, 0 destroyed.}
