@@ -20,7 +20,7 @@ resource "aws_key_pair" "mykey" {
 resource "aws_instance" "jenkins" {
   ami             = "ami-0c02fb55956c7d316"
   instance_type   = "t2.medium"
-  security_groups = [ "${aws_security_group.allow-ssh.name}" ]
+  security_groups = [ "${module.web-sg.security_group_id}" ]
   key_name        = "${aws_key_pair.mykey.key_name}"
   provisioner "remote-exec"  {
     inline  = [
