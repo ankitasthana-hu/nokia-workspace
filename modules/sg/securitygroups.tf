@@ -1,9 +1,48 @@
-output "security_group_id" {
-  description = "The ID of the security group"
-  value       = [ "${aws_security_group.allow-ssh.name}" ]
+provider "aws" {
+  region     = "us-east-1"
+  version = "v2.70.0"
 }
 
-output "security_group_ids" {
-  description = "The ID of the security group"
-  value       = [ "${aws_security_group.allow-ssh.id}" ]
+
+
+   
+resource "aws_security_group" "allow-ssh" {
+  vpc_id      = "vpc-010b7601e4689379b"
+  name        = "${var.sg_name}"
+  description = "security group that allows ssh and all egress traffic"
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = "${var.customport}"  
+    to_port     = "${var.customport}"
+    protocol    = "tcp"
+    cidr_blocks = ["176.63.8.173/32"] # MyIP
+  }
+  ingress {
+    from_port   = "${var.customport}"
+    to_port     = "${var.customport}"
+    protocol    = "tcp"
+    cidr_blocks = ["131.228.2.0/27"]
+  }
+  ingress {
+    from_port   = "${var.customport}"
+    to_port     = "${var.customport}"
+    protocol    = "tcp"
+    cidr_blocks = ["131.228.32.160/27"]
+  }
+
+  tags = {
+    Name = "${var.sg_name}"
+  }
 }
