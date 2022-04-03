@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo su -
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ls -lrta
 chmod 777 get-pip.py
