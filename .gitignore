@@ -1,0 +1,4 @@
+nokia
+nokia.pub
+*.tfstate*
+.terraform
