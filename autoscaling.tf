@@ -4,16 +4,6 @@ module "web-sg" {
   customport     = "5000"
 }
 
-resource "template_file" "user_data" {
-  template = "app_install.tpl"
-  vars {
-    cluster = "flask"
-  }
-  lifecycle {
-    create_before_destroy = true
-  }
-}
-
 resource "aws_launch_configuration" "nokia-launchconfig" {
   name_prefix     = "nokia-launchconfig1"
   image_id        = "ami-0c02fb55956c7d316"
@@ -21,15 +11,37 @@ resource "aws_launch_configuration" "nokia-launchconfig" {
   key_name        = "${aws_key_pair.mykeypair.key_name}"
   security_groups = [ "${module.web-sg.security_group_ids}" ]
   associate_public_ip_address = true
-  user_data = "${template_file.user_data.rendered}"   
-  lifecycle {
-    create_before_destroy = true
-  }
+  user_data= <<-EOF
+             #!/bin/bash
+             curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+             ls -lrta
+             chmod 777 get-pip.py
+             python3 get-pip.py
+             pip3 install flask
+             export FLASK_APP=main.py
+             export FLASK_ENV=development
+             echo "from flask import Flask
+
+                   app = Flask(__name__)
+
+                   @app.route("/")
+                   def home():
+                   return "Hello, World!"
+    
+                   @app.route("/nokia")
+                   def salvador():
+                   return "Hello, Nokia"
+    
+                   if __name__ == "__main__":
+                   app.run(host='0.0.0.0', debug=True, port=5000)" > main.py
+
+             flask run --host=0.0.0.0 --port=5000
+             EOF
 }
 
 resource "aws_autoscaling_group" "nokia-autoscaling" {
   name                      = "nokia-autoscaling"
-  vpc_zone_identifier       = ["subnet-0c65fd7d955f6fee7", "subnet-0ca92403a1cc42a0c", "subnet-09a13d95091746f66", "subnet-0c56741de7259e53c"]
+  vpc_zone_identifier       = ["subnet-0c0df991b95469b32", "subnet-0b30cdaa94ac82998", "subnet-0933807cfaf2dd0c3"]
   launch_configuration      = "${aws_launch_configuration.nokia-launchconfig.name}"
   min_size                  = 2
   max_size                  = 4
