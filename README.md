@@ -52,8 +52,8 @@ Flask python web application is accessible as below
 
 Terraform INIT , PLAN AND APPLY LOG
 =======================================
-
-`[ec2-user@ip-172-31-24-47 nokia-workspace]$ terraform init
+```
+[ec2-user@ip-172-31-24-47 nokia-workspace]$ terraform init
 Initializing modules...
 - module.web-sg
 
@@ -213,6 +213,6 @@ aws_autoscaling_group.nokia-autoscaling: Still creating... (1m10s elapsed)
 aws_autoscaling_group.nokia-autoscaling: Creation complete after 1m18s (ID: nokia-autoscaling)
 
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
-`
+```
 
 
