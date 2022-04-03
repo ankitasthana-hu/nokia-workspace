@@ -22,4 +22,11 @@ drwxrwxr-x 3 ec2-user ec2-user   107 Apr  2 22:49 .
 {code}
 
 
+Flask python web application is accessible as below 
+=================
+
+<img width="521" alt="Screenshot 2022-04-02 at 23 12 40" src="https://user-images.githubusercontent.com/59736927/161406706-f1874131-58b7-46fe-b605-d2aa8d4f8914.png">
+
+<img width="528" alt="Screenshot 2022-04-02 at 23 11 55" src="https://user-images.githubusercontent.com/59736927/161406713-11db19b4-41fc-4361-af95-771712cff78c.png">
+
 
