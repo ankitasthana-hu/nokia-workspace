@@ -22,7 +22,10 @@ drwxrwxr-x 3 ec2-user ec2-user   107 Apr  2 22:49 .
 {code}
 
 
-After Jenkins Installation, couple of plugins installed like terraform, git , created GIThub token in secret text etc.
+After Jenkins Installation, couple of plugins installed like 
+# terraform, git 
+# created GIThub token in secret text etc.
+# AWS secret key and access key stored as credential
 
 Flask python web application is accessible as below 
 =================
